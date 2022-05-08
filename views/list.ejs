@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bucket List</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="bkgrnd"></div>
+	<div class="about">
+				<div class="container">
+					<div class="row">
+   						 <div class="col-sm">
+					    </div>
+					    <div class="col-sm">
+					     <div class="box" id="heading">	
+							<h2> <%=topic%></h2>
+						</div>
+
+							<div class="box">
+
+								<% for (var i =0; i <itemname.length;  i++ ) { %>
+						<form action="/delete" method="post">
+								<div class="item">
+									<input type="checkbox" name="checkbox" onChange="this.form.submit()" value="<%=itemname[i]._id%>">
+								<p><%=  itemname[i].name %></p>
+							</div>
+							<input type="hidden" name="listName" value=<%=topic%>></finput>
+						</form>
+								<% } %>	
+						</div>
+					<form action="/" method="post">
+						<input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+						<button type="Submit" name="list" value=<%=topic%>> + </button>
+					    </div>
+					     <div class="col-sm">
+					     	<img src="https://media.tenor.com/images/81963d90d82b310f39e2e9daca78268c/tenor.gif" height="240" />
+					    </div>
+					</div>
+					</div>			
+
+		</div>
+	
+</body>
+	<br>
+	<br>
+	<div class="about_2">
+				<div class="container">
+					<div class="row">
+   						 <div class="col-sm">
+					    </div>
+					    <div class="col-sm">
+					      <details>
+								<summary>
+									Click to know a Trick! 🎉🎉
+								</summary>
+								<p>Type in "https://enigmatic-wildwood-62898.herokuapp.com/ (your_name)" to create your own Bucket List!</p>
+							</details>
+					    </div>
+					     <div class="col-sm">
+					    </div>
+					</div>
+					</div>			
+
+		</div>
+
+	
+<br><br>
+<footer>
+	With ❤ <a href="https://shubhrima.github.io/shubhrima/" style="text-decoration: none; "> Shubhrima</a>
+</footer>
+</html>
