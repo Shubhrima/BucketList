@@ -3,6 +3,7 @@ const https = require("https");
 const bodyParser =require("body-parser");
 const mongoose =require("mongoose");
 const lodash= require('lodash');
+var dotenv=require('dotenv');
 
 const app=express();
 var items=[];
@@ -12,10 +13,10 @@ var workItems=[];
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static("public"));
+dotenv.config();
 
-
-
-mongoose.connect("mongodb+srv://admin-shubhrima:Sonline26@cluster0.5ptvb.mongodb.net/todolistDB",{ useNewUrlParser: true, useUnifiedTopology: true});
+url=process.env.MONGO_URI
+mongoose.connect(url,{ useNewUrlParser: true, useUnifiedTopology: true});
 
 
 const itemsSchema = new mongoose.Schema({
